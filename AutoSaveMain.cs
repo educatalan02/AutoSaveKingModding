@@ -15,8 +15,6 @@ namespace educatalan02.AutoSaveKingModdingNetwork
     {
         public static AutoSaveMain Instance = null;
 
-        Func<Color> colorify = () => UnturnedChat.GetColorFromName(AutoSaveMain.Instance.Configuration.Instance.Color, Color.yellow);
-
         protected override void Load()
         
         {
@@ -45,10 +43,10 @@ namespace educatalan02.AutoSaveKingModdingNetwork
 
 
 
-
         public void SaveServer()
         {
-            UnturnedChat.Say(Configuration.Instance.SaveServerMsg, colorify());
+            ChatManager.serverSendMessage(Configuration.Instance.SaveServerMsg.Replace('{', '<').Replace('}', '>'), Color.white, null, null, EChatMode.GLOBAL, Configuration.Instance.UrlServer, true);
+
             Rocket.Core.Logging.Logger.Log("Server Saving...!");
             SaveManager.save();
         
@@ -56,7 +54,8 @@ namespace educatalan02.AutoSaveKingModdingNetwork
         }
         public void SaveVehicles()
         {
-            UnturnedChat.Say(Configuration.Instance.SaveVehiclesMsg, colorify());
+            ChatManager.serverSendMessage(Configuration.Instance.SaveVehiclesMsg.Replace('{', '<').Replace('}', '>'), Color.white, null, null, EChatMode.GLOBAL, Configuration.Instance.UrlVehicle, true);
+
             Rocket.Core.Logging.Logger.Log("Vehicles Saving...!");
             SaveManager.save();
 

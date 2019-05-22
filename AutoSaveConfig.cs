@@ -13,21 +13,23 @@ namespace educatalan02.AutoSaveKingModdingNetwork
     {
         public float SaveVehiclesInterval;
         public float SaveServerInterval;
-        public string Color;
+        public string UrlServer;
         public bool SaveServerEnabled;
         public bool SaveVehiclesEnabled;
         public string SaveServerMsg;
+        public string UrlVehicle;
         public string SaveVehiclesMsg;
 
         public void LoadDefaults()
         {
-            SaveServerMsg = "Saving Server...";
-            SaveVehiclesMsg = "Saving Vehicles...";
+            SaveServerMsg = "{color=yellow}[Info] {/color} {color=red}Saving Server...{/color}";
+            SaveVehiclesMsg = "{color=yellow}[Info] {/color} {color=white}Saving Vehicles...{/color}";
             SaveServerEnabled = true;
             SaveVehiclesEnabled = true;
             SaveServerInterval = 600f;
+            UrlVehicle = "LINK OF IMAGE";
             SaveVehiclesInterval = 600f;
-            Color = "yellow";
+            UrlServer = "LINK OF IMAGE";
         }
     }
 }
