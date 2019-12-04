@@ -61,10 +61,5 @@ namespace educatalan02.AutoSaveKingModdingNetwork
 
 
         }
-        // The ability to replace it for SaveMsg
-        public override TranslationList DefaultTranslations => new TranslationList()
-        {
-            {"Saving", "Saving server..."}
-        };
     }
 }
